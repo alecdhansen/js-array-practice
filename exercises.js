@@ -6,12 +6,15 @@
 
 // Put your answer below -------------------------
 
-const sunshine = ('sunshine', 3) => ['sunshine', 'sunshine', 'sunshine'];
+// const sunshine = ('sunshine', 3) => ['sunshine', 'sunshine', 'sunshine'];
 
 function myNewFunction(str, i) {
-  return sunshine.slice();
+  const result = [];
+  for (let j = 0; j < i; j++) {
+    result.push(str);
+  }
+  return result;
 }
-myNewFunction("hello", 5);
 // -----------------------------------------------
 
 // ---------------------
@@ -22,13 +25,13 @@ myNewFunction("hello", 5);
 // Put your answer below -------------------------
 
 // -----------------------------------------------
-const myArray = [2, 3, 4, 5, 6];
+const myArray1 = [2, 3, 4, 5, 6];
 
-function Reversal(arr) {
+function reversal(arr) {
   return arr.slice().reverse();
 }
 
-Reversal(myArray);
+reversal(myArray1);
 // ---------------------
 // Define a function that takes an array and removes all falsy values from the array
 // ---------------------
@@ -36,10 +39,23 @@ Reversal(myArray);
 // Put your answer below -------------------------
 
 // -----------------------------------------------
-const myArray = [2, NaN, false, 4, 0, null];
+const myArray2 = [2, NaN, false, 4, 0, null];
 
 function removal(arr) {
   return arr.filter(a => Boolean(a));
+  }
+
+removal(myArray2);
+
+  // -----COULD ALSO USE----- //
+
+function removal(arr) {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if(arr[i] {
+        result.push(arr[i]);
+      }
+    }
   }
 
 // ---------------------
@@ -51,6 +67,22 @@ function removal(arr) {
 // Put your answer below -------------------------
 
 // -----------------------------------------------
+const myArray3 = [['name', 'Charlie'], ['color', 'brown'], ['age', 10]];
+
+function turnIntoObject(arr) {
+  const result = {}; //has to be an empty object, not an array
+  for (let i = 0; i < arr.length; i++) {
+    result[arr[i][0]] = arr [i][1]; //keeps looping through nested arrays to create the object
+  }
+  return result;
+}
+
+turnIntoObject(myArray3);
+
+//-----COULD ALSO USE----- //
+function turnIntoObject2(arr) {
+  return Object.fromEntries(arr); //look this up on MDN.
+}
 
 // ---------------------
 // Define a function that takes an array and removes duplicate values
@@ -58,17 +90,22 @@ function removal(arr) {
 // ---------------------
 
 // Put your answer below -------------------------
+const myArray4 = [1,2,3,4,5,4,3];
 
-// -----------------------------------------------
-function removesDuplicates(arr){
-    let uniqueArray = [];
+function removeDuplicates(arr){
+    let noDuplicateArray = [];
     for (let i = 0; i < arr.length; i++) {
-        if (uniqueArray.indexOf(arr[i]) === -1) {
-            uniqueArray.push(arr[i]);
+        if (noDuplicateArray.indexOf(arr[i]) === -1) { //takes elements of arr if they're not in my noDuplicateArray and adds them, won't add duplicates cause they've already been added when you loop through again
+            noDuplicateArray.push(arr[i]);
         }
     }
-    return uniqueArray;
+    return noDuplicateArray;
 }
+
+removeDuplicates(myArray4);
+// -----------------------------------------------
+
+
 // ---------------------
 // Define a function that takes two arrays and returns true if they have identical values (order does not matter), it should return false otherwise
 // [1,2,3,4] and [1,2,3,4] should return true
@@ -78,8 +115,22 @@ function removesDuplicates(arr){
 // ---------------------
 
 // Put your answer below -------------------------
-function myArray (arr1, arr2) {
-    let arr1.toString()
+
+//use the sort() method
+
+function compareArrays(arr1, arr2){
+  if(arr1.length !== arr2.length) {
+    return false; //adds a check and ends comparison early if they aren't equal lengths
+  } 
+  arr1.sort();
+  arr2.sort(); //sorts the arrays so the numbers will match up
+
+  for(let i = 0; i < arr1.length; i++) {
+    if(arr1[i] !== arr2[i]) {
+      return false; //compares at each index
+    }
+  }
+return true;
 }
 // -----------------------------------------------
 

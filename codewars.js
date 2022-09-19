@@ -1,6 +1,9 @@
 // # 1
 // Testing 1-2-3
 // https://www.codewars.com/kata/54bf85e3d5b56c7a05000cf9/train/javascript
+const number = function (arr) {
+  let arr = [];
+};
 
 // # 2
 // Filling an array (part 1)
@@ -17,3 +20,12 @@
 // #5
 // THE SOUL OF WIT: REVERSE AN ARRAY
 // https://www.codewars.com/kata/59b81886460387d8fc000043
+
+function reverse(arr) {
+  let output = [];
+  while (arr.length) {
+    output.unshift(arr.pop());
+  }
+
+  return output;
+}
